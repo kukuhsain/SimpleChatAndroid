@@ -1,4 +1,4 @@
-package com.kukuhsain.simple.boilerplate.utility;
+package com.kukuhsain.simple.chat.utility;
 
 import android.content.ContentUris;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.kukuhsain.simple.boilerplate;
+package com.kukuhsain.simple.chat;
 
 import android.app.Application;
 

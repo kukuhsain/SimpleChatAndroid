@@ -1,4 +1,4 @@
-package com.kukuhsain.simple.boilerplate.model.pojo;
+package com.kukuhsain.simple.chat.model.pojo;
 
 import io.realm.RealmObject;
 

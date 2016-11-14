@@ -1,4 +1,4 @@
-package com.kukuhsain.simple.boilerplate;
+package com.kukuhsain.simple.chat;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

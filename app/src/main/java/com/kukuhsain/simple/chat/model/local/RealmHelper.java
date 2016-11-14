@@ -1,6 +1,6 @@
-package com.kukuhsain.simple.boilerplate.model.local;
+package com.kukuhsain.simple.chat.model.local;
 
-import com.kukuhsain.simple.boilerplate.model.pojo.Sample;
+import com.kukuhsain.simple.chat.model.pojo.Sample;
 
 import java.util.List;
 

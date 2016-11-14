@@ -1,4 +1,4 @@
-package com.kukuhsain.simple.boilerplate.view;
+package com.kukuhsain.simple.chat.view;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.kukuhsain.simple.boilerplate.R;
-import com.kukuhsain.simple.boilerplate.model.local.PreferencesHelper;
-import com.kukuhsain.simple.boilerplate.model.pojo.Sample;
-import com.kukuhsain.simple.boilerplate.view.adapter.SampleAdapter;
+import com.kukuhsain.simple.chat.R;
+import com.kukuhsain.simple.chat.model.local.PreferencesHelper;
+import com.kukuhsain.simple.chat.model.pojo.Sample;
+import com.kukuhsain.simple.chat.view.adapter.SampleAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
