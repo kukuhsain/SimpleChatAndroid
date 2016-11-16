@@ -8,3 +8,21 @@ Imagine that you can implement chat as a feature into your Android app as easy a
 copy-pasting code to your own project.
 
 The code in this repo is free to use and to modify, for non-commercial and commercial projects.
+
+## Libraries
+
+In this project, I use some popular libraries to reduce line of codes, improve readability, improve code quality,
+and more advantages that the libraries have offered. Here are some of the libraries.
+
+- Android Support Libraries
+- RxJava and RxAndroid
+- Retrofit 2
+- Butterknife
+- Timber
+- Glide
+
+## Requirements
+
+- JDK 8
+- Android SDK
+- Android N (API 24)
