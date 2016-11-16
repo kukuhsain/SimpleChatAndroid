@@ -23,39 +23,39 @@ public class RealmHelper {
         return INSTANCE;
     }
 
-    public void addSample(Chat destination) {
-        List<Chat> destinations = getAllSamples();
+    public void addChat(Chat chat) {
+        List<Chat> chats = getAllChats();
         boolean isExisted = false;
-        for (Chat destination1 : destinations) {
-            if (destination.getSampleId() == destination1.getSampleId()) {
+        for (Chat chat1 : chats) {
+            if (chat.getSampleId() == chat1.getSampleId()) {
                 isExisted = true;
             }
         }
         if (!isExisted) {
             Realm.getDefaultInstance().executeTransaction(realm -> {
-                realm.copyToRealm(destination);
+                realm.copyToRealm(chat);
             });
         }
     }
 
-    public void addSamples(List<Chat> destinations) {
-        List<Chat> realmChats = getAllSamples();
-        for (Chat destination : destinations) {
+    public void addChats(List<Chat> chats) {
+        List<Chat> realmChats = getAllChats();
+        for (Chat chat : chats) {
             boolean isExisted = false;
             for (Chat realmChat : realmChats) {
-                if (realmChat.getSampleId() == destination.getSampleId()) {
+                if (realmChat.getSampleId() == chat.getSampleId()) {
                     isExisted = true;
                 }
             }
             if (!isExisted) {
                 Realm.getDefaultInstance().executeTransaction(realm -> {
-                    realm.copyToRealm(destination);
+                    realm.copyToRealm(chat);
                 });
             }
         }
     }
 
-    public List<Chat> getAllSamples() {
+    public List<Chat> getAllChats() {
         RealmResults<Chat> iterableChats = Realm.getDefaultInstance()
                 .where(Chat.class).findAll();
         return Realm.getDefaultInstance().copyFromRealm(iterableChats);
