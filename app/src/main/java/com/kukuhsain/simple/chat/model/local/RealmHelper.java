@@ -1,6 +1,6 @@
 package com.kukuhsain.simple.chat.model.local;
 
-import com.kukuhsain.simple.chat.model.pojo.Sample;
+import com.kukuhsain.simple.chat.model.pojo.Chat;
 
 import java.util.List;
 
@@ -23,10 +23,10 @@ public class RealmHelper {
         return INSTANCE;
     }
 
-    public void addSample(Sample destination) {
-        List<Sample> destinations = getAllSamples();
+    public void addSample(Chat destination) {
+        List<Chat> destinations = getAllSamples();
         boolean isExisted = false;
-        for (Sample destination1 : destinations) {
+        for (Chat destination1 : destinations) {
             if (destination.getSampleId() == destination1.getSampleId()) {
                 isExisted = true;
             }
@@ -38,12 +38,12 @@ public class RealmHelper {
         }
     }
 
-    public void addSamples(List<Sample> destinations) {
-        List<Sample> realmSamples = getAllSamples();
-        for (Sample destination : destinations) {
+    public void addSamples(List<Chat> destinations) {
+        List<Chat> realmChats = getAllSamples();
+        for (Chat destination : destinations) {
             boolean isExisted = false;
-            for (Sample realmSample : realmSamples) {
-                if (realmSample.getSampleId() == destination.getSampleId()) {
+            for (Chat realmChat : realmChats) {
+                if (realmChat.getSampleId() == destination.getSampleId()) {
                     isExisted = true;
                 }
             }
@@ -55,9 +55,9 @@ public class RealmHelper {
         }
     }
 
-    public List<Sample> getAllSamples() {
-        RealmResults<Sample> iterableSamples = Realm.getDefaultInstance()
-                .where(Sample.class).findAll();
-        return Realm.getDefaultInstance().copyFromRealm(iterableSamples);
+    public List<Chat> getAllSamples() {
+        RealmResults<Chat> iterableChats = Realm.getDefaultInstance()
+                .where(Chat.class).findAll();
+        return Realm.getDefaultInstance().copyFromRealm(iterableChats);
     }
 }

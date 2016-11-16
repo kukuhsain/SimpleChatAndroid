@@ -15,8 +15,8 @@ import android.widget.Toast;
 
 import com.kukuhsain.simple.chat.R;
 import com.kukuhsain.simple.chat.model.local.PreferencesHelper;
-import com.kukuhsain.simple.chat.model.pojo.Sample;
-import com.kukuhsain.simple.chat.view.adapter.SampleAdapter;
+import com.kukuhsain.simple.chat.model.pojo.Chat;
+import com.kukuhsain.simple.chat.view.adapter.ChatAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,24 +28,24 @@ import butterknife.ButterKnife;
  * Created by kukuh on 14/11/16.
  */
 
-public class SampleActivity extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity {
     @BindView(R.id.toolbar) Toolbar toolbar;
     @BindView(R.id.rv_samples) RecyclerView rvSamples;
 
     private ProgressDialog progressDialog;
     private ActionBar actionBar;
     private RecyclerView.LayoutManager layoutManager;
-    private SampleAdapter adapter;
+    private ChatAdapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sample);
+        setContentView(R.layout.activity_chat);
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
-        actionBar.setTitle("Sample Activity");
+        actionBar.setTitle("Chat Activity");
 
         layoutManager = new LinearLayoutManager(this);
         rvSamples.setLayoutManager(layoutManager);
@@ -54,27 +54,27 @@ public class SampleActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        adapter = new SampleAdapter(getDummySamples());
+        adapter = new ChatAdapter(getDummySamples());
         rvSamples.setAdapter(adapter);
     }
 
-    private List<Sample> getDummySamples() {
-        List<Sample> samples = new ArrayList<>();
+    private List<Chat> getDummySamples() {
+        List<Chat> chats = new ArrayList<>();
         int total = 10;
         for (int i=0; i<total; i++) {
-            samples.add(new Sample(i, "Sample title "+i, "Sample description, Lorem ipsum "+i));
+            chats.add(new Chat(i, "Chat title "+i, "Chat description, Lorem ipsum "+i));
         }
-        return samples;
+        return chats;
     }
 
-    public void onItemClicked(Sample sample) {
-        Toast.makeText(this, sample.getName(), Toast.LENGTH_SHORT).show();
+    public void onItemClicked(Chat chat) {
+        Toast.makeText(this, chat.getName(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_sample_activity, menu);
+        menuInflater.inflate(R.menu.menu_chat_activity, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

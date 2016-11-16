@@ -6,15 +6,15 @@ import io.realm.RealmObject;
  * Created by kukuh on 14/11/16.
  */
 
-public class Sample extends RealmObject {
+public class Chat extends RealmObject {
     private long sampleId;
     private String name;
     private String description;
 
-    public Sample() {
+    public Chat() {
     }
 
-    public Sample(long sampleId, String name, String description) {
+    public Chat(long sampleId, String name, String description) {
         this.sampleId = sampleId;
         this.name = name;
         this.description = description;

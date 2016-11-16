@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.kukuhsain.simple.chat.R;
-import com.kukuhsain.simple.chat.model.pojo.Sample;
-import com.kukuhsain.simple.chat.view.SampleActivity;
+import com.kukuhsain.simple.chat.model.pojo.Chat;
+import com.kukuhsain.simple.chat.view.ChatActivity;
 
 import java.util.List;
 
@@ -20,30 +20,30 @@ import butterknife.ButterKnife;
  * Created by kukuh on 14/11/16.
  */
 
-public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.ViewHolder> {
+public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     private Context context;
-    private List<Sample> samples;
+    private List<Chat> chats;
 
-    public SampleAdapter(List<Sample> samples) {
-        this.samples = samples;
+    public ChatAdapter(List<Chat> chats) {
+        this.chats = chats;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_sample, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.bind(context, samples.get(position));
+        holder.bind(context, chats.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return samples.size();
+        return chats.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -55,11 +55,11 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.ViewHolder
             ButterKnife.bind(this, itemView);
         }
 
-        public void bind(Context context, Sample sample) {
-            tvName.setText(sample.getName());
-            tvDescription.setText(sample.getDescription());
+        public void bind(Context context, Chat chat) {
+            tvName.setText(chat.getName());
+            tvDescription.setText(chat.getDescription());
             itemView.setOnClickListener(view -> {
-                ((SampleActivity) context).onItemClicked(sample);
+                ((ChatActivity) context).onItemClicked(chat);
             });
         }
     }
