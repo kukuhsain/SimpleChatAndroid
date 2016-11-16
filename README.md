@@ -1,3 +1,5 @@
+### Important note: The project has not been ready yet. You should not use the project yet.
+
 # Simple Chat Android App
 
 Chat apps have been becoming popular nowadays. 
@@ -26,3 +28,4 @@ and more advantages that the libraries have offered. Here are some of the librar
 - JDK 8
 - Android SDK
 - Android N (API 24)
+
